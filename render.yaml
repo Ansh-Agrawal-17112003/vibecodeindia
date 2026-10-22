@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: vibe-coders
+    runtime: node
+    plan: starter
+    region: oregon
+    buildCommand: npm install && npm run build
+    startCommand: node .output/server/index.mjs
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NITRO_PRESET
+        value: node-server
